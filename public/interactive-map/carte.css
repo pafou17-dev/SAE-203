@@ -1,0 +1,171 @@
+/* ============================================================
+   Cycle'Up · Carte interactive — STYLES
+   Tout est préfixé « cu- » et rangé sous .cu-carte : aucun conflit
+   avec les styles du site. Hauteur réglable avec --cu-hauteur.
+   ============================================================ */
+.cu-carte{
+  --cu-petrole:#173F46; --cu-creme:#F6F2E8; --cu-jaune:#F2C94C; --cu-argile:#AA4D37;
+  --cu-brume:#DDE8EA; --cu-surface:#FBF8F1; --cu-texte2:#3D5C62; --cu-fond-plan:#EEE9DC;
+  --cu-titre:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --cu-corps:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --cu-pilule:999px; --cu-tr:200ms ease-in-out; --cu-focus:0 0 0 3px var(--cu-argile);
+  position:relative; isolation:isolate;
+  height:var(--cu-hauteur,100%); min-height:520px;
+  display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:auto minmax(0,1fr);
+  background:#fff; color:var(--cu-petrole); font:16px/1.5 var(--cu-corps);
+  overflow:hidden;
+}
+.cu-carte *,.cu-carte *::before,.cu-carte *::after{box-sizing:border-box}
+:where(.cu-carte) :where(button,input){font:inherit;color:inherit}
+.cu-carte :focus-visible{outline:none;box-shadow:var(--cu-focus);border-radius:var(--cu-pilule)}
+.cu-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Recherche ---------- */
+.cu-outils{min-width:0;min-height:0}
+.cu-recherche{display:grid;gap:10px;padding:12px 16px 10px}
+.cu-trajet{background:var(--cu-surface);border:2px solid var(--cu-petrole);border-radius:16px;padding:10px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px 10px;align-items:center;margin:0}
+.cu-points{grid-column:1;grid-row:1/3;display:grid;justify-items:center;gap:4px}
+.cu-points i{width:12px;height:12px;border-radius:50%;border:3px solid var(--cu-petrole);background:var(--cu-jaune)}
+.cu-points i:last-child{background:var(--cu-argile)}
+.cu-points b{width:2px;height:22px;background:var(--cu-petrole)}
+.cu-trajet label{grid-column:2;display:grid;min-width:0}
+.cu-trajet label span{font-size:12px;font-weight:700;letter-spacing:.02em}
+.cu-trajet input{border:0;background:none;padding:2px 0;min-height:28px;min-width:0;font-weight:500;outline:none}
+.cu-trajet input:focus-visible{box-shadow:inset 0 -2px 0 var(--cu-argile);border-radius:0}
+.cu-inverser{grid-column:3;grid-row:1/3;width:48px;height:48px;border-radius:50%;border:2px solid var(--cu-petrole);background:var(--cu-creme);cursor:pointer;display:grid;place-items:center;transition:background var(--cu-tr)}
+.cu-inverser:hover{background:var(--cu-brume)}
+.cu-ligne-outils{display:flex;gap:8px;align-items:center;min-width:0}
+.cu-ligne-outils .cu-btn{flex:1 1 auto;padding:0 14px}
+.cu-btn{min-height:48px;padding:0 20px;border-radius:var(--cu-pilule);border:2px solid var(--cu-petrole);background:var(--cu-petrole);color:var(--cu-creme);font-weight:500;cursor:pointer;transition:box-shadow var(--cu-tr),background var(--cu-tr)}
+.cu-btn:hover{box-shadow:0 4px 12px rgb(23 63 70/.28)}
+.cu-btn--sec{background:var(--cu-surface);color:var(--cu-petrole)}
+.cu-btn--sec:hover{background:var(--cu-brume);box-shadow:none}
+.cu-filtres{min-width:0;flex:1;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:3px;margin:-3px}
+.cu-filtres::-webkit-scrollbar{display:none}
+.cu-filtre{flex:none;min-height:40px;padding:0 14px;border-radius:var(--cu-pilule);border:2px solid var(--cu-petrole);background:var(--cu-surface);display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;cursor:pointer;transition:background var(--cu-tr)}
+.cu-filtre:hover{background:var(--cu-brume)}
+.cu-filtre[aria-pressed="true"]{background:var(--cu-petrole);color:var(--cu-creme)}
+.cu-filtre i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px var(--cu-surface)}
+.cu-bascule{display:flex;border:2px solid var(--cu-petrole);border-radius:var(--cu-pilule);padding:2px;margin-left:auto;flex:none}
+.cu-bascule button{min-height:36px;padding:0 14px;border:0;border-radius:var(--cu-pilule);background:none;font-weight:500;font-size:14px;cursor:pointer}
+.cu-bascule button[aria-pressed="true"]{background:var(--cu-petrole);color:var(--cu-creme)}
+.cu-note{font-size:12px;color:var(--cu-texte2)}
+.cu-zones{display:flex;gap:4px;flex-wrap:wrap;min-width:0}
+.cu-zone{min-height:36px;padding:0 10px;border:0;border-radius:var(--cu-pilule);background:none;font-size:14px;font-weight:500;text-decoration:underline;text-decoration-color:rgb(23 63 70/.35);text-underline-offset:4px;cursor:pointer;transition:background var(--cu-tr)}
+.cu-zone:hover{background:var(--cu-brume)}
+
+/* ---------- Plan ---------- */
+.cu-scene{position:relative;min-height:0;overflow:hidden}
+.cu-plan{position:absolute;inset:0;z-index:1}
+.cu-plan.leaflet-container{background:var(--cu-fond-plan);font:inherit}
+.cu-plan.leaflet-container:focus-visible{border-radius:0;box-shadow:inset var(--cu-focus)}
+.cu-carte .leaflet-control-attribution{font-size:11px;background:rgb(255 255 255/.85)}
+.cu-carte .leaflet-control-attribution a{color:var(--cu-petrole)}
+
+/* Marqueurs (icônes HTML de Leaflet) */
+.cu-m{display:grid;place-items:center}
+.cu-m:focus{outline:none}
+.cu-m:focus-visible>span{box-shadow:0 0 0 3px #fff,0 0 0 6px var(--cu-argile)}
+.cu-m>span{display:grid;place-items:center;font:700 12px/1 var(--cu-corps);transition:transform var(--cu-tr)}
+.cu-m[role="button"]{cursor:pointer}
+.cu-m[role="button"]:hover>span{transform:scale(1.12)}
+.cu-m-arret>span{width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--cu-petrole);box-shadow:0 1px 4px rgb(23 63 70/.35)}
+.cu-m-arret--pole>span{width:24px;height:24px;border-width:5px}
+.cu-m-arret.cu-m--choisi>span{border-color:var(--cu-argile);background:radial-gradient(circle,var(--cu-argile) 0 3px,#fff 3.5px)}
+.cu-m-rosalie>span{width:34px;height:34px;border-radius:50%;background:var(--cu-jaune);border:3px solid var(--cu-petrole);color:var(--cu-petrole);box-shadow:0 2px 6px rgb(23 63 70/.35)}
+.cu-m-rosalie.cu-m--choisi>span{transform:scale(1.2);border-color:var(--cu-argile)}
+.cu-m-fin>span{width:16px;height:16px;border-radius:50%;background:var(--cu-petrole);border:3px solid var(--cu-jaune)}
+.cu-m-velo>span{width:30px;height:30px;border-radius:8px;background:#2F6F86;color:#fff;border:2px solid #fff;box-shadow:0 1px 4px rgb(23 63 70/.35)}
+.cu-m-velo--vide>span{background:#8B9A97}
+.cu-m-covoit>span{width:32px;height:32px;border-radius:50%;background:var(--cu-surface);border:3px solid var(--cu-petrole);color:var(--cu-petrole)}
+.cu-m-bus>span{width:38px;height:24px;border-radius:12px;color:#fff;border:2px solid #fff;box-shadow:0 1px 4px rgb(23 63 70/.4)}
+.cu-m-moi>span{width:20px;height:20px;border-radius:50%;background:#2F6FDE;border:3px solid #fff;box-shadow:0 0 0 6px rgb(47 111 222/.25)}
+.cu-m-depart>span,.cu-m-arrivee>span{width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid var(--cu-petrole);background:var(--cu-jaune)}
+.cu-m-arrivee>span{background:var(--cu-argile)}
+.cu-controles{position:absolute;right:12px;top:12px;display:grid;gap:8px;z-index:500}
+.cu-controles button{width:48px;height:48px;border-radius:50%;border:0;background:var(--cu-surface);box-shadow:0 2px 10px rgb(23 63 70/.2);font-size:22px;font-weight:500;cursor:pointer;display:grid;place-items:center;transition:background var(--cu-tr)}
+.cu-controles button:hover{background:var(--cu-brume)}
+.cu-legende{position:absolute;left:12px;top:12px;z-index:500;pointer-events:none;background:rgb(251 248 241/.92);border-radius:12px;padding:8px 12px;font-size:12px;line-height:1.4;max-width:min(270px,calc(100% - 90px))}
+.cu-legende b{display:block}
+.cu-direct{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;border-radius:var(--cu-pilule);padding:2px 8px;background:var(--cu-petrole);color:var(--cu-creme)}
+.cu-direct::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cu-jaune);animation:cu-pulse 1.6s ease-in-out infinite}
+.cu-prevu{display:inline-flex;align-items:center;font-size:12px;font-weight:700;border-radius:var(--cu-pilule);padding:1px 8px;border:1.5px solid var(--cu-texte2);color:var(--cu-texte2)}
+@keyframes cu-pulse{50%{opacity:.25}}
+
+/* ---------- Fiche (arrêt, station, itinéraire) ---------- */
+.cu-fiche{position:absolute;left:0;right:0;bottom:0;z-index:700;background:var(--cu-surface);border-radius:20px 20px 0 0;box-shadow:0 -8px 30px rgb(23 63 70/.18);padding:8px 16px calc(16px + env(safe-area-inset-bottom,0px));max-height:75%;overflow:auto;transition:transform 260ms ease-in-out}
+.cu-fiche[hidden]{display:block;transform:translateY(110%);visibility:hidden}
+.cu-poignee{width:44px;height:5px;border-radius:3px;background:var(--cu-brume);margin:0 auto 8px}
+.cu-fiche h3{font:500 24px/1.2 var(--cu-titre);margin:0;padding-right:48px;text-wrap:balance}
+.cu-fiche h3:focus{box-shadow:none}
+.cu-sous-titre{color:var(--cu-texte2);font-size:14px;margin:2px 0 10px}
+.cu-fermer{position:absolute;right:12px;top:10px;width:44px;height:44px;border-radius:50%;border:0;background:var(--cu-creme);cursor:pointer;font-size:20px}
+.cu-lignes{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.cu-badge{min-width:34px;height:26px;padding:0 8px;border-radius:var(--cu-pilule);display:inline-grid;place-items:center;font-weight:700;font-size:13px;color:#fff;background:var(--c)}
+.cu-passages{list-style:none;margin:0 0 12px;padding:0;border-top:1px solid rgb(23 63 70/.15)}
+.cu-passages li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid rgb(23 63 70/.15)}
+.cu-dir{min-width:0;font-weight:500}
+.cu-dir small{display:block;font-weight:400;color:var(--cu-texte2);font-size:13px}
+.cu-min{font:600 22px/1 var(--cu-titre);font-variant-numeric:tabular-nums;text-align:right}
+.cu-min small{display:block;font:500 11px/1.3 var(--cu-corps);color:var(--cu-texte2)}
+.cu-infos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 12px}
+.cu-infos div{background:var(--cu-creme);border-radius:8px;padding:8px 10px;font-size:14px}
+.cu-infos b{display:block;font-size:12px}
+.cu-infos--1{grid-template-columns:minmax(0,1fr)}
+.cu-grand{font:600 26px/1.2 var(--cu-titre)}
+.cu-actions{display:flex;gap:8px;flex-wrap:wrap}
+.cu-fiche .cu-note{margin-top:10px}
+.cu-etapes{list-style:none;margin:6px 0 12px;padding:0}
+.cu-etapes li{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;padding-bottom:14px;position:relative}
+.cu-etapes li::before{content:"";position:absolute;left:13px;top:26px;bottom:0;width:3px;background:var(--lc,var(--cu-petrole))}
+.cu-etapes li:last-child::before{display:none}
+.cu-num{width:28px;height:28px;border-radius:50%;background:var(--cu-jaune);border:3px solid var(--cu-petrole);display:grid;place-items:center;font-size:12px;font-weight:700}
+.cu-num--pied{background:var(--cu-surface)}
+.cu-etape{font-weight:500}
+.cu-etape small{display:block;font-weight:400;color:var(--cu-texte2);font-size:13px}
+.cu-heure{font-variant-numeric:tabular-nums;font-weight:700;font-size:14px}
+
+/* ---------- Liste ---------- */
+.cu-liste{position:absolute;inset:0;z-index:600;overflow:auto;background:#fff;padding:4px 16px 16px}
+.cu-liste h3{font:500 22px/1.2 var(--cu-titre);margin:16px 0 4px}
+.cu-liste h3:first-child{margin-top:8px}
+.cu-element{width:100%;text-align:left;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border:0;border-bottom:1px solid rgb(23 63 70/.15);background:none;cursor:pointer;transition:opacity var(--cu-tr)}
+.cu-element:hover{opacity:.75}
+.cu-element:focus-visible{border-radius:8px}
+.cu-pastille{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--cu-jaune);font-weight:700;font-size:12px;text-align:center;line-height:1.1}
+.cu-nom{font-weight:500;min-width:0}
+.cu-nom small{display:block;color:var(--cu-texte2);font-weight:400;font-size:13px}
+.cu-pastille--rosalie{border:3px solid var(--cu-petrole)}
+.cu-pastille--velo{background:#DDE8EA}
+.cu-suivant{text-align:right;font:600 18px/1.1 var(--cu-titre);font-variant-numeric:tabular-nums}
+.cu-suivant small{display:block;font:500 11px/1.2 var(--cu-corps);color:var(--cu-texte2)}
+
+/* ---------- Message temporaire ---------- */
+.cu-message{position:absolute;z-index:900;left:50%;transform:translateX(-50%);bottom:16px;background:var(--cu-petrole);color:var(--cu-creme);padding:10px 16px;border-radius:12px;font-size:14px;max-width:calc(100% - 32px)}
+
+/* Fiche ouverte : la recherche se replie (comme la maquette) */
+.cu-carte--fiche .cu-recherche{display:none}
+
+/* ---------- Grand format (classe ajoutée par le script si la carte fait ≥ 820 px de large) ---------- */
+.cu-carte--large{grid-template-columns:400px minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+.cu-carte--large .cu-outils{overflow:auto;border-right:1px solid rgb(23 63 70/.12)}
+.cu-carte--large .cu-recherche{padding-top:16px}
+.cu-carte--large .cu-lateral{padding:0 16px 16px}
+.cu-carte--large.cu-carte--fiche .cu-lateral{padding-top:16px}
+.cu-carte--large .cu-fiche{position:relative;transform:none;box-shadow:none;border-radius:16px;border:1px solid rgb(23 63 70/.15);padding:12px 16px 16px;max-height:none}
+.cu-carte--large .cu-fiche[hidden]{display:none}
+.cu-carte--large .cu-poignee{display:none}
+.cu-carte--large .cu-liste{position:static;padding:0;background:none}
+.cu-carte--large.cu-carte--fiche .cu-liste{display:none}
+
+@media (prefers-reduced-motion:reduce){.cu-carte *{transition:none!important;animation:none!important}}
+
+/* Sélecteur de fond de carte (contrôle Leaflet, restylé sans image) */
+.cu-carte .leaflet-control-layers{border:0;border-radius:12px;background:var(--cu-surface,#FBF8F1);box-shadow:0 2px 10px rgb(23 63 70/.18);color:#173F46;font-size:13px}
+.cu-carte .leaflet-control-layers-toggle{background:none;width:auto;height:auto;padding:8px 12px;font-weight:700;color:#173F46;text-decoration:none;display:block}
+.cu-carte .leaflet-control-layers-toggle::before{content:"Fond de carte"}
+.cu-carte .leaflet-control-layers-expanded{padding:10px 12px}
+.cu-carte .leaflet-control-layers-base label{display:flex;align-items:center;gap:6px;padding:3px 0;cursor:pointer}
+.cu-carte .leaflet-control-layers input{accent-color:#173F46}
+.cu-carte .leaflet-bottom.leaflet-left{bottom:22px}
+.cu-carte:not(.cu-carte--large) .leaflet-bottom.leaflet-left{bottom:40px}

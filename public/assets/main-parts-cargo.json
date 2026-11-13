@@ -1,0 +1,134 @@
+{
+  "parts": [
+    {
+      "id": 0,
+      "key": "chassis",
+      "name": "Châssis",
+      "subtitle": "Structure porteuse",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/040_assemblage_chassis.html",
+      "sourceObjects": 92,
+      "triangles": 301786
+    },
+    {
+      "id": 1,
+      "key": "direction",
+      "name": "Direction",
+      "subtitle": "Guidons et biellettes",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/040_assemblage_chassis.html",
+      "sourceObjects": 19,
+      "triangles": 40436
+    },
+    {
+      "id": 2,
+      "key": "front_left",
+      "name": "Roue avant gauche",
+      "subtitle": "Roue et frein",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/050_montage_pieces_cycles.html#ensemble-roues-avant-et-freins",
+      "sourceObjects": 45,
+      "triangles": 172230
+    },
+    {
+      "id": 3,
+      "key": "front_right",
+      "name": "Roue avant droite",
+      "subtitle": "Roue et frein",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/050_montage_pieces_cycles.html#ensemble-roues-avant-et-freins",
+      "sourceObjects": 45,
+      "triangles": 172230
+    },
+    {
+      "id": 4,
+      "key": "rear",
+      "name": "Roue arrière",
+      "subtitle": "Moyeu à vitesses intégrées",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/050_montage_pieces_cycles.html#ensemble-roue-arriere-frein-et-commande-du-moyeu",
+      "sourceObjects": 43,
+      "triangles": 200261
+    },
+    {
+      "id": 5,
+      "key": "motor",
+      "name": "Moteur et pédalier",
+      "subtitle": "Bafang M400",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/050_montage_pieces_cycles.html#moteur-et-pedalier",
+      "sourceObjects": 28,
+      "triangles": 124354
+    },
+    {
+      "id": 6,
+      "key": "transmission",
+      "name": "Transmission",
+      "subtitle": "Chaîne et tendeur de chaîne",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/050_montage_pieces_cycles.html#transmission",
+      "sourceObjects": 6,
+      "triangles": 83572
+    },
+    {
+      "id": 7,
+      "key": "seats",
+      "name": "Siège conducteur",
+      "subtitle": "Une place à l’avant",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/100_sieges.html",
+      "sourceObjects": 11,
+      "triangles": 47818
+    },
+    {
+      "id": 8,
+      "key": "platforms",
+      "name": "Plateformes latérales",
+      "subtitle": "Plateaux et garde-boue",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/084_pose_tole_panneau.html#montage-des-toles",
+      "sourceObjects": 45,
+      "triangles": 98568
+    },
+    {
+      "id": 9,
+      "key": "gallery",
+      "name": "Galerie",
+      "subtitle": "Structure du toit",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/084_pose_tole_panneau.html#pose-du-panneau-solaire",
+      "sourceObjects": 37,
+      "triangles": 71926
+    },
+    {
+      "id": 10,
+      "key": "solar",
+      "name": "Panneau solaire",
+      "subtitle": "Production d’électricité",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/084_pose_tole_panneau.html#pose-du-panneau-solaire",
+      "sourceObjects": 2,
+      "triangles": 972
+    },
+    {
+      "id": 11,
+      "key": "battery",
+      "name": "Batteries",
+      "subtitle": "Alimentation électrique",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/080_installation_electricite.html#installation-de-la-batterie",
+      "sourceObjects": 3,
+      "triangles": 56532
+    },
+    {
+      "id": 12,
+      "key": "electric",
+      "name": "Boîtier électrique",
+      "subtitle": "Connexions de bord",
+      "source": "https://documentation.vhelio.org/vheliotech/guide-de-montage/v1.0.0/080_installation_electricite.html#connexions-boitier-ele99",
+      "sourceObjects": 5,
+      "triangles": 61562
+    },
+    {
+      "id": 13,
+      "key": "cargo",
+      "name": "Bac de rangement",
+      "subtitle": "Grand bac arrière ouvert",
+      "source": null,
+      "sourceObjects": 11,
+      "triangles": 7460
+    }
+  ],
+  "hiddenFasteners": 1470,
+  "sourceBlend": "Rosalie_CycleUp_V2_Cargo.blend",
+  "excludedRolledObjects": [],
+  "asset": "rosalie-cargo.glb"
+}
