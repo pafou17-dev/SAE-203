@@ -1,3 +1,5 @@
+import './i18n.js';
+
 const menu = document.getElementById('site-menu');
 const menuButtons = [...document.querySelectorAll('[data-open-menu]')];
 menuButtons.forEach(button => button.addEventListener('click', () => {

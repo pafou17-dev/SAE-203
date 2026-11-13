@@ -10,21 +10,21 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="preload" href="./assets/fonts/BricolageBold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="./showroom.css">
-  <link rel="stylesheet" href="./edition.css?v=20261113-perf-1">
+  <link rel="stylesheet" href="./edition.css?v=20261113-language-1">
   <link rel="stylesheet" href="./interactive-map/lib/leaflet.css">
-  <link rel="stylesheet" href="./interactive-map/carte.css?v=20261113-perf-1">
-  <link rel="stylesheet" href="./map-integration.css?v=20261113-perf-1">
-  <link rel="stylesheet" href="./site-pages.css?v=20261113-perf-1">
-  <link rel="stylesheet" href="./audiences.css?v=20261113-perf-1">
-  <link rel="stylesheet" href="./gallery-backdrop.css?v=20261113-perf-1">
+  <link rel="stylesheet" href="./interactive-map/carte.css?v=20261113-language-1">
+  <link rel="stylesheet" href="./map-integration.css?v=20261113-language-1">
+  <link rel="stylesheet" href="./site-pages.css?v=20261113-language-1">
+  <link rel="stylesheet" href="./audiences.css?v=20261113-language-1">
+  <link rel="stylesheet" href="./gallery-backdrop.css?v=20261113-language-1">
   <script src="./interactive-map/lib/leaflet.js" defer></script>
   <script src="./interactive-map/donnees-carte.js" defer></script>
-  <script src="./interactive-map/carte.js?v=20261113-perf-1" defer></script>
+  <script src="./interactive-map/carte.js?v=20261113-language-1" defer></script>
   <script type="importmap">{"imports":{"three":"./vendor/build/three.module.js","three/addons/":"./vendor/examples/jsm/"}}</script>
-</head>
+<link rel="stylesheet" href="./i18n.css?v=20261113-language-1"></head>
 <body class="home-page">
   <div id="reading-progress" aria-hidden="true"></div>
-  <nav id="journey-nav" aria-label="Parcourir le site"><a href="#top" class="nav-mark" aria-label="Retour aux modèles 3D"><img src="./assets/journey/mark.svg" width="31" height="31" alt=""><span>Cycle’Up</span></a><div class="journey-nav-links"><a href="#le-projet" data-section-link>Projet</a><a href="#les-usages" data-section-link>Pour qui ?</a><a href="#les-mobilites" data-section-link>Mobilités</a><a href="/boite-a-idees/">Boîte à idées</a><a href="/contact/">Contact</a></div><button type="button" class="site-menu-toggle" data-open-menu aria-controls="site-menu" aria-expanded="false" aria-label="Ouvrir la navigation">Menu ☰</button></nav>
+  <nav id="journey-nav" aria-label="Parcourir le site"><a href="#top" class="nav-mark" aria-label="Retour aux modèles 3D"><img src="./assets/journey/mark.svg" width="31" height="31" alt=""><span>Cycle’Up</span></a><div class="journey-nav-links"><a href="#le-projet" data-section-link>Projet</a><a href="#les-usages" data-section-link>Pour qui ?</a><a href="#les-mobilites" data-section-link>Mobilités</a><a href="/boite-a-idees/">Boîte à idées</a><a href="/contact/">Contact</a></div><label class="language-picker"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.5" ry="7.5"/><path d="M2.5 10h15"/></svg><select data-language-select aria-label="Langue du site"><option value="fr" lang="fr" aria-label="Français">FR</option><option value="en" lang="en" aria-label="English">EN</option><option value="es" lang="es" aria-label="Español">ES</option></select></label><button type="button" class="site-menu-toggle" data-open-menu aria-controls="site-menu" aria-expanded="false" aria-label="Ouvrir la navigation">Menu ☰</button></nav>
   <main id="site-main">
   <section class="showroom" id="top" aria-label="Explorer la Rosalie en 3D">
   <div class="studio-backdrop" aria-hidden="true">
@@ -53,7 +53,7 @@
   <a href="#toggle" class="skip">Accéder aux commandes</a>
   <header class="header">
     <div class="brand-lockup"><img src="./assets/cycleup-inverse.svg" width="166" height="52" alt="Cycle’Up Pyrénées"><span class="brand-divider"></span><p class="eyebrow">LA ROSALIE<br> <span>EN 3D</span></p></div>
-    <div class="header-right"><nav class="showroom-pages" aria-label="Les autres pages"><a href="/boite-a-idees/">Boîte à idées</a><a href="/contact/">Contact</a></nav><a class="hero-vote" href="/boite-a-idees/">Voter <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></a><button type="button" class="site-menu-toggle" data-open-menu aria-controls="site-menu" aria-expanded="false" aria-label="Ouvrir la navigation">Menu ☰</button><span class="test-badge"><i></i> 3 modèles</span><button id="reset" class="icon-button" disabled aria-label="Recentrer la vue" title="Recentrer la vue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><circle cx="12" cy="12" r="3"/></svg><span id="reset-label" class="reset-label" hidden>Vue d’ensemble</span></button></div>
+    <div class="header-right"><nav class="showroom-pages" aria-label="Les autres pages"><a href="/boite-a-idees/">Boîte à idées</a><a href="/contact/">Contact</a></nav><a class="hero-vote" href="/boite-a-idees/">Voter <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></a><label class="language-picker"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.5" ry="7.5"/><path d="M2.5 10h15"/></svg><select data-language-select aria-label="Langue du site"><option value="fr" lang="fr" aria-label="Français">FR</option><option value="en" lang="en" aria-label="English">EN</option><option value="es" lang="es" aria-label="Español">ES</option></select></label><button type="button" class="site-menu-toggle" data-open-menu aria-controls="site-menu" aria-expanded="false" aria-label="Ouvrir la navigation">Menu ☰</button><span class="test-badge"><i></i> 3 modèles</span><button id="reset" class="icon-button" disabled aria-label="Recentrer la vue" title="Recentrer la vue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><circle cx="12" cy="12" r="3"/></svg><span id="reset-label" class="reset-label" hidden>Vue d’ensemble</span></button></div>
   </header>
   <div class="showroom-controls">
     <section id="carousel" aria-roledescription="carrousel" aria-label="Les trois modèles de rosalie">
@@ -138,12 +138,12 @@
   <dialog id="gallery-lightbox" class="gallery-lightbox" aria-labelledby="gallery-dialog-title"><div class="gallery-dialog-header"><span id="gallery-dialog-count">01 / 09</span><span>CYCLE’UP PYRÉNÉES</span><button type="button" id="gallery-dialog-close" aria-label="Fermer l’image">✕</button></div><figure class="gallery-dialog-figure"><img id="gallery-dialog-image" width="1200" height="900" alt=""><figcaption><h2 id="gallery-dialog-title">Rencontre en montagne</h2><div class="gallery-dialog-navigation"><button type="button" id="gallery-dialog-previous" aria-label="Image précédente">←</button><button type="button" id="gallery-dialog-next" aria-label="Image suivante">→</button></div></figcaption></figure><p class="gallery-dialog-hint">Flèches pour parcourir · Échap pour fermer</p></dialog>
   <footer class="site-footer"><div class="footer-top"><img src="./assets/cycleup-inverse.svg" width="166" height="52" alt="Cycle’Up Pyrénées"><a class="back-to-top" href="#top">Revenir aux modèles 3D <span aria-hidden="true">↑</span></a></div><p class="footer-statement">Les chemins<br>en commun.</p><div class="footer-bottom"><span>Cycle’Up Pyrénées</span><nav aria-label="Liens utiles"><a href="#le-projet">Le projet</a><a href="#les-usages">Pour qui ?</a><a href="/boite-a-idees/">Boîte à idées</a><a href="/contact/">Contact</a><a href="./assets/charte-cycleup.pdf" target="_blank" rel="noopener">La charte graphique ↗</a></nav><span></span></div></footer>
   <a class="id-dock" href="/boite-a-idees/" aria-label="Boîte à idées : voter et partager un avis"><svg class="idea-mark" data-scroll-idea viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 5v9m0 16v9M5 22h9m16 0h9M10 10l6.5 6.5m11 11L34 34M10 34l6.5-6.5m11-11L34 10" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="22" cy="22" r="5" fill="currentColor"/></svg><span class="id-dock-copy">Idée</span><span class="idea-dock-arrow" aria-hidden="true">↗</span></a>
-  <dialog id="site-menu" class="site-menu" aria-labelledby="menu-title"><div class="menu-top"><span id="menu-title">Navigation</span><button type="button" data-close-dialog>Fermer ×</button></div><nav class="menu-list" aria-label="Toutes les pages"><a href="/#le-projet">Le projet<span aria-hidden="true">↗</span></a><a href="/#les-usages">Pour qui ?<span aria-hidden="true">↗</span></a><a href="/#les-mobilites">La carte<span aria-hidden="true">↗</span></a><a href="/boite-a-idees/">Boîte à idées<span aria-hidden="true">↗</span></a><a href="/contact/">Contact<span aria-hidden="true">↗</span></a></nav><p class="menu-caption"></p></dialog>
-  <script type="module" src="./site-ui.js?v=20261113-perf-1"></script>
-  <script type="module" src="./app.js?v=20261113-perf-1"></script>
-  <script type="module" src="./audiences.js?v=20261113-perf-1"></script>
-  <script type="module" src="./map-integration.js?v=20261113-perf-1"></script>
-  <script type="module" src="./edition-motion.js?v=20261113-perf-1"></script>
-  <script type="module" src="./story-gallery.js?v=20261113-perf-1"></script>
+  <dialog id="site-menu" class="site-menu" aria-labelledby="menu-title"><div class="menu-top"><span id="menu-title">Navigation</span><label class="language-picker"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.5" ry="7.5"/><path d="M2.5 10h15"/></svg><select data-language-select aria-label="Langue du site"><option value="fr" lang="fr" aria-label="Français">FR</option><option value="en" lang="en" aria-label="English">EN</option><option value="es" lang="es" aria-label="Español">ES</option></select></label><button type="button" data-close-dialog>Fermer ×</button></div><nav class="menu-list" aria-label="Toutes les pages"><a href="/#le-projet">Le projet<span aria-hidden="true">↗</span></a><a href="/#les-usages">Pour qui ?<span aria-hidden="true">↗</span></a><a href="/#les-mobilites">La carte<span aria-hidden="true">↗</span></a><a href="/boite-a-idees/">Boîte à idées<span aria-hidden="true">↗</span></a><a href="/contact/">Contact<span aria-hidden="true">↗</span></a></nav><p class="menu-caption"></p></dialog>
+  <script type="module" src="./site-ui.js?v=20261113-language-1"></script>
+  <script type="module" src="./app.js?v=20261113-language-1"></script>
+  <script type="module" src="./audiences.js?v=20261113-language-1"></script>
+  <script type="module" src="./map-integration.js?v=20261113-language-1"></script>
+  <script type="module" src="./edition-motion.js?v=20261113-language-1"></script>
+  <script type="module" src="./story-gallery.js?v=20261113-language-1"></script>
 </body>
 </html>

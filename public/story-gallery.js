@@ -20,8 +20,9 @@ function initializeGallery(){
 
   function updateCaption(){
     const index=wrap(Math.round(position));
-    if(current===index&&document.getElementById('gallery-current-title').textContent===items[index].title)return;
-    current=index;document.getElementById('gallery-current-title').textContent=items[index].title;
+    const title=window.CycleUpI18n?.translate(items[index].title)??items[index].title;
+    if(current===index&&document.getElementById('gallery-current-title').textContent===title)return;
+    current=index;document.getElementById('gallery-current-title').textContent=title;
     document.getElementById('gallery-count').textContent=`${String(index+1).padStart(2,'0')} / ${String(items.length).padStart(2,'0')}`;
     picks.forEach((button,i)=>{if(i===index)button.setAttribute('aria-current','true');else button.removeAttribute('aria-current');});
   }

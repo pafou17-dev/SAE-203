@@ -36,6 +36,13 @@ de consultation sur le port 8873 pour les tests.
 
 ## Optimisations
 
+Le sélecteur FR / EN / ES traduit les pages, les commandes 3D, les messages des
+formulaires et la carte sans recharger la page. Le choix est conservé entre les
+pages. Les textes et pseudonymes des visiteurs ne sont pas traduits. Les fichiers
+`public/translations.js`, `public/i18n.js` et `public/i18n.css` contiennent les
+traductions, leur application et le style du sélecteur. `npm run test:i18n`
+vérifie la couverture des textes, des libellés accessibles et des pièces 3D.
+
 - Le modèle sélectionné est chargé à la demande. Les aperçus latéraux utilisent
   les rendus existants, sans télécharger deux autres modèles 3D.
 - Deux modèles décodés au maximum sont conservés en mémoire. Les états de

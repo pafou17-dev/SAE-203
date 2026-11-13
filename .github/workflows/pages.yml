@@ -21,6 +21,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - run: npm run test:i18n
       - run: node scripts/build-pages.mjs
         env:
           PAGES_BASE_PATH: /SAE-203/
